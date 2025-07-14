@@ -1,11 +1,16 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from "./header/header.component";
+import { FooterComponent } from "./footer/footer.component";
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { register } from 'swiper/element/bundle';
+register();
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
+  imports: [HeaderComponent, FooterComponent, RouterModule, CommonModule]
 })
 export class AppComponent {
   title = 'restaurant';
