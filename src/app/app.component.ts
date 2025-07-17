@@ -9,8 +9,7 @@ register();
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
-  imports: [HeaderComponent, FooterComponent, RouterModule, CommonModule]
+  imports: [RouterModule, CommonModule, HeaderComponent, FooterComponent]
 })
 export class AppComponent {
   title = 'restaurant';
