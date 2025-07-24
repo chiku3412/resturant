@@ -1,13 +1,30 @@
 import { AfterViewInit, Component } from '@angular/core';
 import Swiper from 'swiper';
+import { LightgalleryModule } from 'lightgallery/angular';
+import { BeforeSlideDetail } from 'lightgallery/lg-events';
+import lgZoom from 'lightgallery/plugins/zoom';
+import lgThumbnail from 'lightgallery/plugins/thumbnail';
+import lgShare from "lightgallery/plugins/share";
+import lgRotate from "lightgallery/plugins/rotate";
+import lgFullscreen from "lightgallery/plugins/fullscreen";
 
 @Component({
     selector: 'app-home',
-    imports: [],
+    imports: [LightgalleryModule],
     templateUrl: './home.component.html'
 })
 export class HomeComponent implements AfterViewInit {
     swiper!: Swiper;
+
+    settings = {
+        counter: false,
+        plugins: [lgZoom, lgThumbnail, lgShare, lgRotate, lgFullscreen,],
+    };
+    
+    onBeforeSlide = (detail: BeforeSlideDetail): void => {
+        const { index, prevIndex } = detail;
+        console.log(index, prevIndex);
+    };
 
     foodImages = [
         {image: 'images/banner-1.png'},
@@ -33,6 +50,19 @@ export class HomeComponent implements AfterViewInit {
         { image:'images/meal-list-1-1.jpg', foodName: 'El Pulled pork burrito', foodPrice: '$12', foodDescription: 'Classic greek salad, barrel aged feta cheese, bread' },
         { image:'images/meal-list-1-1.jpg', foodName: 'El Pulled pork burrito', foodPrice: '$12', foodDescription: 'Classic greek salad, barrel aged feta cheese, bread' },
         { image:'images/meal-list-1-1.jpg', foodName: 'El Pulled pork burrito', foodPrice: '$12', foodDescription: 'Classic greek salad, barrel aged feta cheese, bread' },
+    ]
+
+    galleryImage : string[] = [
+        'images/Gallery/1.jpg',
+        'images/Gallery/2.jpg',
+        'images/Gallery/3.jpg',
+        'images/Gallery/4.jpg',
+        'images/Gallery/5.jpg',
+        'images/Gallery/6.jpg',
+        'images/Gallery/7.jpg',
+        'images/Gallery/8.jpg',
+        'images/Gallery/9.jpg',
+        'images/Gallery/10.jpg'
     ]
 
     ngAfterViewInit(): void {

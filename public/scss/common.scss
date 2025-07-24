@@ -116,3 +116,24 @@ footer {
         background-image: url(../../public/images/section-shape-img2.png);
     }
 }
+
+.about-section {
+    .about-title {
+        line-height: 60px !important;
+    }
+    .about-content {
+        h2 {
+            line-height: 40px;
+        }
+    }
+
+    .about-line {
+        background-image: url(../../public/images/about_line.png);
+        background-position: center center;
+        // background-size: 100% 100%;
+    }
+}
+
+.breadcrumb-wrapper {
+    background-image: url(../../public/images/breadcumb_bg_2.jpg);
+}

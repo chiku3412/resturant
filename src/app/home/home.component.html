@@ -1,7 +1,7 @@
 <div class="banner-section pt-32 md:pt-40 lg:pt-52 relative after:content[''] after:absolute after:left-0 after:right-0 after:bottom-0 after:h-52 after:z-10 before:content[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full z-0 before:bg-cover">
     <div class="container mx-auto px-5">
         <div class="banner-content mx-auto relative z-10 text-white text-center">
-            <h1 class="text-2xl md:text-4xl lg:text-7xl">Delightful Experience</h1>
+            <h1 class="text-2xl md:text-4xl lg:text-7xl font-titleFont">Delightful Experience</h1>
             <h6 class="text-base my-4">A taste of perfection in every dish - <span class="text-orange-300"> fine dining with a modern twist.</span></h6>
             <button class="border border-orange-300 text-orange-300 px-8 py-2 cursor-pointer hover:bg-orange-300 hover:text-black font-semibold transition-all duration-500">
                 View Menu
@@ -90,6 +90,68 @@
             </div>
             }
         </div>
+    </div>
+</div>
+
+<div class="about-section bg-white py-20">
+    <div class="container mx-auto px-5">
+        <h5 class="text-orange-300 title inline-flex uppercase items-center justify-center w-full gap-3 relative text-base font-semibold tracking-widest text-center">Our story</h5>
+        <h2 class="text-black about-title text-3xl md:text-4xl lg:text-5xl max-w-5xl mx-auto font-normal tracking-wider text-center font-titleFont my-4">
+            Where Exquisite Flavors Meet <span class="text-orange-300">Elegant Ambiance</span> for an <span class="text-orange-300">Unforgettable Fine Dining</span> Experience!
+        </h2>
+    </div>
+    <div class="relative mt-20">
+        <div class="container mx-auto px-5">
+            <div class="grid lg:grid-cols-2 gap-5">
+                <div class="about-img relative z-10">
+                    <img src="images/about_1_1.png" />
+                </div>
+                <div class="about-content">
+                    <h5 class="text-orange-300 uppercase text-base font-semibold tracking-widest">Our story</h5>
+                    <h2 class="text-4xl text-black font-normal lg:max-w-sm font-titleFont my-4">Real Delicious Food Straight To Your Table</h2>
+                    <h6 class="text-gray-500 lg:max-w-lg">Assertively envisioneer high-payoff architectures after interactive service. Collaboratively whiteboard pandemic intellectual capital without cross-platform channels</h6>
+                    <div class="flex gap-5 mt-4 flex-wrap">
+                        <img src="images/about_1_2.jpg" class="rounded-md" />
+                        <div class="list">
+                            <ul class="space-y-3">
+                                <li class="text-black font-semibold"><i class="fa-solid fa-badge-check text-orange-300 me-1"></i> Delicious & Healthy Foods</li>
+                                <li class="text-black font-semibold"><i class="fa-solid fa-badge-check text-orange-300 me-1"></i> Specific Family & Kids Zone</li>
+                                <li class="text-black font-semibold"><i class="fa-solid fa-badge-check text-orange-300 me-1"></i> Best Price & Offers</li>
+                                <li class="text-black font-semibold"><i class="fa-solid fa-badge-check text-orange-300 me-1"></i> Made By Fresh Ingredients</li>
+                                <li class="text-black font-semibold"><i class="fa-solid fa-badge-check text-orange-300 me-1"></i> Music & Other Facilities</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr class="my-10"/>
+                    <button class="border border-orange-300 text-orange-300 px-8 py-2 w-max mx-auto cursor-pointer hover:bg-orange-300 hover:text-black font-semibold transition-all duration-500">
+                        Discover More
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="bg-pattern absolute top-0 left-0 z-0 hidden xl:block">
+            <img src="images/bg_shape_1.png" />
+        </div>
+    </div>
+</div>
+
+<div class="gallery-section bg-[rgb(24,49,46)] py-20">
+    <div class="container mx-auto px-5">
+        <h5 class="text-orange-300 title inline-flex uppercase items-center justify-center w-full gap-3 relative text-base font-semibold tracking-widest text-center">Gallery</h5>
+        <h2 class="text-white uppercase text-3xl md:text-4xl lg:text-5xl max-w-5xl mx-auto font-normal tracking-wider text-center font-titleFont my-4 leading-[60px]">
+            Restoria Gallery
+        </h2>
+
+        <div class="columns-1 sm:columns-2 md:columns-3 gap-5 mt-20">
+            <lightgallery [settings]="settings" [onBeforeSlide]="onBeforeSlide">
+                @for(image of galleryImage; track i; let i = $index) {
+                    <a [href]="image" class="block w-full break-inside-avoid shadow-lg mb-5">
+                        <img [src]="image" class="w-full h-auto rounded-lg" />
+                    </a>
+                }
+            </lightgallery>
+        </div>
+
     </div>
 </div>
 
