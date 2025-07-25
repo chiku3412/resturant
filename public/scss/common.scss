@@ -88,6 +88,50 @@ body {
     }
 }
 
+.tab-button {
+    button {
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            right: -10%;
+            top: 50%;
+            transform: translateY(-50%);
+            background: url(../images/star-element.svg) no-repeat center center;
+            display: inline-block;
+            height: 15px;
+            width: 15px;
+        }
+        &:last-child {
+            &::before {
+                display: none;
+            }
+        }
+    }
+}
+
+.tab-content{
+    position: relative;
+    background-color:var(--color-two);
+    background-image:url(../images/menu-bg-paper.jpg);
+    background-repeat: repeat;
+    background-position: top center;
+    background-size: cover;
+}
+
+.tab-content:before{
+    content: '';
+    position: absolute;
+    left: -70px;
+    top: 0;
+    width: 70px;
+    height: 100%;
+    background-color:var(--color-two);
+    background-image:url(../images/pattern-dark.png);
+    background-repeat: repeat;
+    background-position: top center;
+}
+
 .info-bar {
     background: rgb(21,44,41) url(../images/pattern-dark.png) center top repeat;
 }
@@ -136,4 +180,10 @@ footer {
 
 .breadcrumb-wrapper {
     background-image: url(../../public/images/breadcumb_bg_2.jpg);
+}
+.contact-form {
+    &::before {
+        background: linear-gradient(to top, rgb(24,49,46) 10%, transparent 60%), url(../images/footer-bg.jpg) no-repeat;
+        background-attachment: scroll;
+    }
 }

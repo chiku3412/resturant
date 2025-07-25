@@ -7,10 +7,11 @@ import lgThumbnail from 'lightgallery/plugins/thumbnail';
 import lgShare from "lightgallery/plugins/share";
 import lgRotate from "lightgallery/plugins/rotate";
 import lgFullscreen from "lightgallery/plugins/fullscreen";
+import { ContactSectionComponent } from "../contact-section/contact-section.component";
 
 @Component({
     selector: 'app-home',
-    imports: [LightgalleryModule],
+    imports: [LightgalleryModule, ContactSectionComponent],
     templateUrl: './home.component.html'
 })
 export class HomeComponent implements AfterViewInit {

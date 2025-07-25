@@ -1,0 +1,19 @@
+<app-breadcrumb-banner></app-breadcrumb-banner>
+<div class="gallery-section bg-[rgb(24,49,46)] py-20">
+    <div class="container mx-auto px-5">
+        <h5 class="text-orange-300 title inline-flex uppercase items-center justify-center w-full gap-3 relative text-base font-semibold tracking-widest text-center">Gallery</h5>
+        <h2 class="text-white uppercase text-3xl md:text-4xl lg:text-5xl max-w-5xl mx-auto font-normal tracking-wider text-center font-titleFont my-4 leading-[60px]">
+            Restoria Gallery
+        </h2>
+        <div class="columns-1 sm:columns-2 md:columns-3 gap-5 mt-20">
+            <lightgallery [settings]="settings" [onBeforeSlide]="onBeforeSlide">
+                @for(image of galleryImage; track i; let i = $index) {
+                    <a [href]="image" class="block w-full break-inside-avoid shadow-lg mb-5">
+                        <img [src]="image" class="w-full h-auto rounded-lg" />
+                    </a>
+                }
+            </lightgallery>
+        </div>
+    </div>
+</div>
+<app-contact-section></app-contact-section>

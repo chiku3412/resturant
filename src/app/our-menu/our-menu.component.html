@@ -1,1 +1,126 @@
-<p>our-menu works!</p>
+<app-breadcrumb-banner></app-breadcrumb-banner>
+
+<div class="our-menu-section bg-[rgb(24,49,46)] pt-20 pb-32">
+    <div class="container mx-auto px-5">
+        <h5 class="text-orange-300 title inline-flex uppercase items-center justify-center w-full gap-3 relative text-base font-semibold tracking-widest text-center">Special Fine Dine</h5>
+        <h2 class="text-white uppercase text-3xl md:text-4xl lg:text-5xl max-w-5xl mx-auto font-normal tracking-wider text-center font-titleFont my-4">Delicious Menu</h2>
+        <h6 class="text-white md:max-w-4xl mx-auto text-center tracking-wider leading-7">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt ullam excepturi natus explicabo eaque a. Officia corrupti qui reprehenderit repellendus, quo a alias saepe aperiam sapiente numquam dolores rem. Architecto?
+        </h6>
+        <div class="flex flex-col sm:flex-row justify-center gap-2 md:gap-4 mt-10 tab-button">
+            <button class="px-10 py-2 text-sm md:text-base font-semibold transition-all" [ngClass]="selectedTab === 'tab1' ? 'text-orange-300' : 'border-transparent text-white'" (click)="selectTab('tab1')">
+                Tab One
+            </button>
+            <button class="px-10 py-2 text-sm md:text-base font-semibold transition-all" [ngClass]="selectedTab === 'tab2' ? 'text-orange-300' : 'border-transparent text-white'" (click)="selectTab('tab2')">
+                Tab Two
+            </button>
+            <button class="px-10 py-2 text-sm md:text-base font-semibold transition-all" [ngClass]="selectedTab === 'tab3' ? 'text-orange-300' : 'border-transparent text-white'" (click)="selectTab('tab3')">
+                Tab Three
+            </button>
+        </div>
+    </div>
+</div>
+<div class="menu-card">
+    <div class="container mx-auto lg:-mt-20 mt-10 mb-10 lg:mb-20 bg-white shadow-md rounded-md">
+        <div class="w-full mx-auto">
+            <div class="tab-content p-8">
+                @if(selectedTab === 'tab1') {
+                    <div class="content">
+                        <div class="grid lg:grid-cols-2 gap-5">
+                            <div class="food-list">
+                                @for(food of foodMenu; track food) {
+                                <div class="food-menu overflow-hidden pb-4 cursor-pointer border-b border-orange-300 transition-all duration-500 flex items-center">
+                                    <div class="flex items-center w-full">
+                                        <div class="food-img flex-auto opacity-0 invisible -ml-20 transition-all duration-500 me-2">
+                                            <img class="h-20 object-contain" [src]="food.image" />
+                                        </div>
+                                        <div class="food-name w-full transition-all duration-500">
+                                            <div class="flex items-center justify-between">
+                                                <h3 class="flex w-full me-8 capitalize text-orange-300 transition-all duration-500">
+                                                    <a class="shrink-0 me-8 font-semibold">{{ food.foodName }}</a>
+                                                    <span class="w-full h-[1px] mt-3 inline-block border border-dashed border-gray-300 transform -translate-y-1/2 transition-all duration-500"></span>
+                                                </h3>
+                                                <span class="text-lg text-orange-300">{{ food.foodPrice }}</span>
+                                            </div>
+                                            <p class="text-sm capitalize text-white">
+                                                {{ food.foodDescription }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                }
+                            </div>
+                            <div class="food-img mx-auto">
+                                <img class="rounded-t-full" src="images/menus-1.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                }
+                @if(selectedTab === 'tab2') {
+                    <div class="content">
+                        <div class="grid lg:grid-cols-2 gap-5">
+                            <div class="food-list">
+                                @for(food of foodMenu; track food) {
+                                <div class="food-menu overflow-hidden pb-4 cursor-pointer border-b border-orange-300 transition-all duration-500 flex items-center">
+                                    <div class="flex items-center w-full">
+                                        <div class="food-img flex-auto opacity-0 invisible -ml-20 transition-all duration-500 me-2">
+                                            <img class="h-20 object-contain" [src]="food.image" />
+                                        </div>
+                                        <div class="food-name w-full transition-all duration-500">
+                                            <div class="flex items-center justify-between">
+                                                <h3 class="flex w-full me-8 capitalize text-orange-300 transition-all duration-500">
+                                                    <a class="shrink-0 me-8 font-semibold">{{ food.foodName }}</a>
+                                                    <span class="w-full h-[1px] mt-3 inline-block border border-dashed border-gray-300 transform -translate-y-1/2 transition-all duration-500"></span>
+                                                </h3>
+                                                <span class="text-lg text-orange-300">{{ food.foodPrice }}</span>
+                                            </div>
+                                            <p class="text-sm capitalize text-white">
+                                                {{ food.foodDescription }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                }
+                            </div>
+                            <div class="food-img mx-auto">
+                                <img class="rounded-t-full" src="images/menus-2.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                }
+                @if(selectedTab === 'tab3') {
+                    <div class="content">
+                        <div class="grid lg:grid-cols-2 gap-5">
+                            <div class="food-list">
+                                @for(food of foodMenu; track food) {
+                                <div class="food-menu overflow-hidden pb-4 cursor-pointer border-b border-orange-300 transition-all duration-500 flex items-center">
+                                    <div class="flex items-center w-full">
+                                        <div class="food-img flex-auto opacity-0 invisible -ml-20 transition-all duration-500 me-2">
+                                            <img class="h-20 object-contain" [src]="food.image" />
+                                        </div>
+                                        <div class="food-name w-full transition-all duration-500">
+                                            <div class="flex items-center justify-between">
+                                                <h3 class="flex w-full me-8 capitalize text-orange-300 transition-all duration-500">
+                                                    <a class="shrink-0 me-8 font-semibold">{{ food.foodName }}</a>
+                                                    <span class="w-full h-[1px] mt-3 inline-block border border-dashed border-gray-300 transform -translate-y-1/2 transition-all duration-500"></span>
+                                                </h3>
+                                                <span class="text-lg text-orange-300">{{ food.foodPrice }}</span>
+                                            </div>
+                                            <p class="text-sm capitalize text-white">
+                                                {{ food.foodDescription }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                }
+                            </div>
+                            <div class="food-img mx-auto">
+                                <img class="rounded-t-full" src="images/menus-desert.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
